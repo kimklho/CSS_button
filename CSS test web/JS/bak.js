@@ -1,6 +1,6 @@
-let r = 255
-let g = 0
-let b = 0
+let r = 255;
+let g = 0;
+let b = 0;
 
 // function sleep(ms) {
 //   const wakeUpTime = Date.now() + ms;
@@ -63,20 +63,25 @@ function removeBack(){
 
 // 버튼 1 다크모드
 function NightDay() {
+	// rainbow 해제
 	clearInterval(interval);
+	const AudioPlay = document.getElementById("AudioPlay")
+	AudioPlay.pause();
 	document.getElementById("switch2").checked=false;
+
+	// 조건문
 	rain_bak = 0;		
-		if (Night_Day == 0) {
-			document.querySelector('body').style.backgroundColor='black'; 
-			document.querySelector('body').style.transition='0.6s';
-			document.querySelector('body').style.color='white';
-			Night_Day = 1;
-		}else{	
-			document.querySelector('body').style.backgroundColor='white'; 
-			document.querySelector('body').style.transition='0.6s';
-			document.querySelector('body').style.color='black';
-			Night_Day = 0; 
-		}
+	if (Night_Day == 0) {
+		document.querySelector('body').style.backgroundColor='black'; 
+		document.querySelector('body').style.transition='0.6s';
+		document.querySelector('body').style.color='white';
+		Night_Day = 1;
+	}else{	
+		document.querySelector('body').style.backgroundColor='white'; 
+		document.querySelector('body').style.transition='0.6s';
+		document.querySelector('body').style.color='black';
+		Night_Day = 0; 
+	}
 }
 
 // 버튼 2 rainbow배경 
@@ -87,16 +92,21 @@ function RainBak() {
 	document.querySelector('body').style.transition='0.6s';
 	document.querySelector('body').style.color='black';
 
+	// 오디오 객체 불러오기
+	const AudioPlay = document.getElementById("AudioPlay")
+
 	// 조건문
 	Night_Day = 0;
 	if (rain_bak == 0) {
 		interval;
-			rain_bak = 1;
-			interval = setInterval(myTimer, 10);
+		rain_bak = 1;
+		interval = setInterval(myTimer, 10);
+		AudioPlay.play();
 	}else{
 		clearInterval(interval);
 		document.querySelector('body').style.backgroundColor='white';
 		rain_bak = 0;
+		AudioPlay.pause();
 	}
 }
 
