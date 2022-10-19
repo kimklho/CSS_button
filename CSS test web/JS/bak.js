@@ -72,11 +72,17 @@ function NightDay() {
 	// 조건문
 	rain_bak = 0;		
 	if (Night_Day == 0) {
+		$('.darkMode').fadeOut('slow', function(){
+			$('.lightMode').fadeIn('slow');
+		});
 		document.querySelector('body').style.backgroundColor='black'; 
 		document.querySelector('body').style.transition='0.6s';
 		document.querySelector('body').style.color='white';
 		Night_Day = 1;
 	}else{	
+		$('.lightMode').fadeOut('slow', function(){
+			$('.darkMode').fadeIn('slow');	
+		});
 		document.querySelector('body').style.backgroundColor='white'; 
 		document.querySelector('body').style.transition='0.6s';
 		document.querySelector('body').style.color='black';
