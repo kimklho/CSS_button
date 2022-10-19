@@ -47,7 +47,7 @@ function removeBack(){
 			document.querySelector('.backGrondBtn').style.height='40px';
 			setTimeout(function(){
 				document.querySelector('#switchAll').disabled=false;
-			}, 1500);
+			}, 1400);
 		});
 	}else if(bakremoves == 1) {
 		bakremoves = 0;
@@ -72,16 +72,28 @@ function NightDay() {
 	// 조건문
 	rain_bak = 0;		
 	if (Night_Day == 0) {
-		$('.darkMode').fadeOut('slow', function(){
-			$('.lightMode').fadeIn('slow');
+		document.querySelector('#switch').disabled=true;
+		$('.material-symbols-outlined').fadeOut(400, function(){
+			$('.darkMode').fadeOut(400, function(){
+				$('.tun').fadeIn(400);
+				$('.lightMode').fadeIn(400);	
+				$('.rianbowIkon').fadeIn(400);
+				document.querySelector('#switch').disabled=false;
+			});
 		});
 		document.querySelector('body').style.backgroundColor='black'; 
 		document.querySelector('body').style.transition='0.6s';
 		document.querySelector('body').style.color='white';
 		Night_Day = 1;
-	}else{	
-		$('.lightMode').fadeOut('slow', function(){
-			$('.darkMode').fadeIn('slow');	
+	}else{
+		document.querySelector('#switch').disabled=true;
+		$('.material-symbols-outlined').fadeOut(400, function(){
+			$('.lightMode').fadeOut(400, function(){
+				$('.tun').fadeIn(400);
+				$('.darkMode').fadeIn(400);	
+				$('.rianbowIkon').fadeIn(400);
+				document.querySelector('#switch').disabled=false;
+			});
 		});
 		document.querySelector('body').style.backgroundColor='white'; 
 		document.querySelector('body').style.transition='0.6s';

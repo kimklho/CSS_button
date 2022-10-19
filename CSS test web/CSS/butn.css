@@ -7,10 +7,12 @@
   width: 110px;
   height: 110px;
   background-color: rgba(128, 128, 128, 0.5);
-  padding-top: 5px;
   position: fixed;
   bottom: 10px;
   border-radius: 5px;
+}
+.esy{
+  margin: 2px 0 0 2px;
 }
 /* 모든 배경 스위치 ON/OFF */
 #switchAll {
