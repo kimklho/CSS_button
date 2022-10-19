@@ -1,0 +1,168 @@
+.wrapper {
+  width: 105px;
+  height: 35px;
+  text-align: center;
+}
+.backGrondBtn{ 
+  width: 110px;
+  height: 110px;
+  background-color: rgba(128, 128, 128, 0.5);
+  padding-top: 5px;
+  position: fixed;
+  bottom: 10px;
+  border-radius: 5px;
+}
+/* 모든 배경 스위치 ON/OFF */
+#switchAll {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.switch_labelAll {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid #e3adfa;
+  border-radius: 20px;
+  transition: 0.6s;
+}
+.switch_labelAll:hover {
+  background: #efefef;
+}
+.onf_btnAll {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #e3adfa;
+  transition: 0.6s;
+}
+
+/* checking style */
+#switchAll:checked+.switch_labelAll {
+  background: #e3adfa;
+  border: 2px solid #e3adfa;
+}
+
+#switchAll:checked+.switch_labelAll:hover {
+  background: #e3adfa;
+}
+
+/* move */
+#switchAll:checked+.switch_labelAll .onf_btnAll {
+  left: 34px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+#switchAll:checked+#removbk {
+  transition: 0.6s;
+}
+
+/* 버튼 1번 */
+#switch {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.switch_label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid #e3adfa;
+  border-radius: 20px;
+  transition: 0.6s;
+}
+.switch_label:hover {
+  background: #efefef;
+}
+.onf_btn {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #e3adfa;
+  transition: 0.6s;
+}
+
+/* checking style */
+#switch:checked+.switch_label {
+  background: #e3adfa;
+  border: 2px solid #e3adfa;
+}
+
+#switch:checked+.switch_label:hover {
+  background: #e3adfa;
+}
+
+/* move */
+#switch:checked+.switch_label .onf_btn {
+  left: 34px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
+/* 레인보우 */
+#switch2 {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.switch_label2 {
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 58px;
+  height: 28px;
+  background: #fff;
+  border: 2px solid #e3adfa;
+  border-radius: 20px;
+  transition: 0.6s;
+}
+.switch_label2:hover {
+  background: #efefef;
+}
+.onf_btn2 {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #e3adfa;
+  transition: 0.6s;
+}
+
+/* checking style */
+#switch2:checked+.switch_label2 {
+  background: #e3adfa;
+  border: 2px solid #e3adfa;
+}
+
+#switch2:checked+.switch_label2:hover {
+  background: #e3adfa;
+}
+
+/* move */
+#switch2:checked+.switch_label2 .onf_btn2 {
+  left: 34px;
+  background: #fff;
+  box-shadow: 1px 2px 3px #00000020;
+}
