@@ -38,9 +38,9 @@ let bakremoves = 0;
 function removeBack(){
 	if(bakremoves == 0){
 		bakremoves = 1;
+		document.querySelector('.backGrondBtn').style.transition='1.5s';
 		document.querySelector('#switchAll').disabled=true;
 		$('#removbk').fadeOut('slow', function(){
-			document.querySelector('.backGrondBtn').style.transition='1.5s';
 			document.querySelector('.backGrondBtn').style.height='40px';
 			setTimeout(function(){
 				document.querySelector('#switchAll').disabled=false;
@@ -54,6 +54,7 @@ function removeBack(){
 		setTimeout(function() {
 			$('#removbk').fadeIn('slow');
 			document.querySelector('#switchAll').disabled=false;
+			document.querySelector('.backGrondBtn').style.transition='0s';
 		}, 1100);
 	}
 }
@@ -70,6 +71,7 @@ function NightDay() {
 	rain_bak = 0;		
 	if (Night_Day == 0) {
 		document.querySelector('#switch').disabled=true;
+		document.querySelector('body').style.transition='0.6s';
 		$('.tun, .darkMode, .rianbowIkon').fadeOut(450, function(){
 			document.querySelector('body').style.color='white';
 			$('.tun').fadeIn(450);
@@ -78,10 +80,9 @@ function NightDay() {
 			document.querySelector('#switch').disabled=false;
 		});
 		document.querySelector('body').style.backgroundColor='black'; 
-		document.querySelector('body').style.transition='0.6s';
 		Night_Day = 1;
 	}else{
-		
+		document.querySelector('body').style.transition='0.6s';
 		document.querySelector('#switch').disabled=true;
 		$('.tun, .lightMode, .rianbowIkon').fadeOut(450, function(){
 			document.querySelector('body').style.color='black';
@@ -91,7 +92,6 @@ function NightDay() {
 			document.querySelector('#switch').disabled=false;
 		});
 		document.querySelector('body').style.backgroundColor='white'; 
-		document.querySelector('body').style.transition='0.6s';
 		Night_Day = 0; 
 	}
 }
