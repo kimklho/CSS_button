@@ -123,7 +123,7 @@ function RainBak() {
 		interval;
 		rain_bak = 1;
 		interval = setInterval(myTimer, 20);
-		// AudioPlay.play();
+		AudioPlay.play();
 	}else{
 		clearInterval(interval);
 		document.querySelector('body').style.backgroundColor='white';
