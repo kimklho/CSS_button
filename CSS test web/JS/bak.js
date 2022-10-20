@@ -99,7 +99,7 @@ function NightDay() {
 // 버튼 2 rainbow배경 
 function RainBak() {
 	// 아이콘 변경 및 색상 조정
-	document.querySelector('body').style.transition='0.6s';
+	document.querySelector('body').style.transition='0.4s';
 	document.getElementById("switch").checked = false;
 	let para = document.querySelector('.darkMode');
 	let compStyles = window.getComputedStyle(para);
