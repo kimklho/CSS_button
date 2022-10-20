@@ -20,14 +20,11 @@ function myTimer () {
     } else if (r == 0 && g > 0 && b == 255) {
         g--
     } else if (r < 255 && g == 0 && b == 255) {
-        r++
+    	r++
     } else if (r == 255 && g== 0 && b > 0) {
         b--
     }
-    document.body.style.backgroundColor = rgb(r, g, b);
-}
-function rgb(r, g, b){
-    return "rgb("+r+","+g+","+b+")"
+    document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
 }
 // 무지개 배경 초기화
 let interval = setInterval(myTimer, 70);
@@ -47,7 +44,7 @@ function removeBack(){
 			document.querySelector('.backGrondBtn').style.height='40px';
 			setTimeout(function(){
 				document.querySelector('#switchAll').disabled=false;
-			}, 1400);
+			}, 1450);
 		});
 	}else if(bakremoves == 1) {
 		bakremoves = 0;
@@ -73,42 +70,49 @@ function NightDay() {
 	rain_bak = 0;		
 	if (Night_Day == 0) {
 		document.querySelector('#switch').disabled=true;
-		$('.material-symbols-outlined').fadeOut(400, function(){
-			$('.darkMode').fadeOut(400, function(){
-				$('.tun').fadeIn(400);
-				$('.lightMode').fadeIn(400);	
-				$('.rianbowIkon').fadeIn(400);
-				document.querySelector('#switch').disabled=false;
-			});
+		$('.tun, .darkMode, .rianbowIkon').fadeOut(450, function(){
+			document.querySelector('body').style.color='white';
+			$('.tun').fadeIn(450);
+			$('.lightMode').fadeIn(450);	
+			$('.rianbowIkon').fadeIn(450);
+			document.querySelector('#switch').disabled=false;
 		});
 		document.querySelector('body').style.backgroundColor='black'; 
 		document.querySelector('body').style.transition='0.6s';
-		document.querySelector('body').style.color='white';
 		Night_Day = 1;
 	}else{
+		
 		document.querySelector('#switch').disabled=true;
-		$('.material-symbols-outlined').fadeOut(400, function(){
-			$('.lightMode').fadeOut(400, function(){
-				$('.tun').fadeIn(400);
-				$('.darkMode').fadeIn(400);	
-				$('.rianbowIkon').fadeIn(400);
-				document.querySelector('#switch').disabled=false;
-			});
+		$('.tun, .lightMode, .rianbowIkon').fadeOut(450, function(){
+			document.querySelector('body').style.color='black';
+			$('.tun').fadeIn(450);
+			$('.darkMode').fadeIn(450);	
+			$('.rianbowIkon').fadeIn(450);
+			document.querySelector('#switch').disabled=false;
 		});
 		document.querySelector('body').style.backgroundColor='white'; 
 		document.querySelector('body').style.transition='0.6s';
-		document.querySelector('body').style.color='black';
 		Night_Day = 0; 
 	}
 }
 
 // 버튼 2 rainbow배경 
 function RainBak() {
-	// 위 NightDay  배경 해제
-	document.getElementById("switch").checked = false;
-	// document.querySelector('body').style.backgroundColor=none; 
+	// 아이콘 변경 및 색상 조정
 	document.querySelector('body').style.transition='0.6s';
-	document.querySelector('body').style.color='black';
+	document.getElementById("switch").checked = false;
+	let para = document.querySelector('.darkMode');
+	let compStyles = window.getComputedStyle(para);
+    if(compStyles.getPropertyValue('display') === 'none'){
+    	$('.tun, .lightMode, .rianbowIkon').fadeOut(800, function(){
+			$('.tun').fadeIn(800);
+			$('.darkMode').fadeIn(800);	
+			$('.rianbowIkon').fadeIn(800);
+			document.querySelector('body').style.color='black';
+		});
+    }else{
+    	document.querySelector('body').style.color='black';
+    }
 
 	// 오디오 객체 불러오기
 	const AudioPlay = document.getElementById("AudioPlay")
@@ -118,8 +122,8 @@ function RainBak() {
 	if (rain_bak == 0) {
 		interval;
 		rain_bak = 1;
-		interval = setInterval(myTimer, 10);
-		AudioPlay.play();
+		interval = setInterval(myTimer, 20);
+		// AudioPlay.play();
 	}else{
 		clearInterval(interval);
 		document.querySelector('body').style.backgroundColor='white';
